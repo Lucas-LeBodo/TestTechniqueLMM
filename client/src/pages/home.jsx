@@ -9,6 +9,7 @@ const Home = () => {
     let addBtn = '';
     let removeBtn = '';
 
+    const [bgColor, setBgColor] = useState(null);
     const [imgUrl, setImgUrl] = useState();
     const [count, setCount] = useState(1);
 
@@ -28,7 +29,12 @@ const Home = () => {
                 console.error("Error :", err);
             })
 
-    }, [count]);
+            if( (count%2) === 0) {
+                setBgColor("bgpink")
+            } else { 
+                setBgColor("bgwhite")
+            }
+    }, [count, bgColor]);
            
     if(count === 1 ){
         addBtn = <Btn name="+" onClick={() =>  setCount(count => count + 1)}/>;
@@ -40,11 +46,12 @@ const Home = () => {
     if(count === 10){
         removeBtn = <Btn name="-" onClick={() => setCount(count => count - 1)}/>;
     }
+
     return (
         <Fragment>
-            <div className="container">
+            <div className={"container " + bgColor}>
                 <h1>Combien d'oreillers dans votre vie ?</h1>
-                <div className={"carrousel"}>
+                <div className="carrousel">
                     <img src={imgUrl} alt="coussin.png"/>
                 </div>
                 <div className="control">
