@@ -43,6 +43,7 @@ const Home = () => {
     return (
         <Fragment>
             <div className="container">
+                <h1>Combien d'oreillers dans votre vie ?</h1>
                 <div className={"carrousel"}>
                     <img src={imgUrl} alt="coussin.png"/>
                 </div>
