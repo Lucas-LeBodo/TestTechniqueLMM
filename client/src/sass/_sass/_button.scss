@@ -1,0 +1,20 @@
+.btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    border-radius: 50px;
+    border: 3px solid orange;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: 1000;
+    color: orange;
+    background-color: white;
+
+    &:hover {
+        background-color: orange;
+        color: white;
+    }
+}

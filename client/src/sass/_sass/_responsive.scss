@@ -1,0 +1,13 @@
+@media only screen and (min-width: 50px) and (max-width: 425px) {
+    .container {
+
+        h1 { 
+            text-align: center
+        }
+        .carrousel {
+            justify-content: center;
+            height: 10em;
+            width: 10em;
+        }
+    }
+}
