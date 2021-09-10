@@ -6,8 +6,6 @@
     width: 100vw;
     height: 100vh;
 
-    background-color: pink;
-
     h1 {
         color: orange;
         font-size: 50px;
@@ -28,4 +26,12 @@
             font-size: 50px;
         }
     }
+}
+
+.bgwhite { 
+    background-color: white;
+}
+
+.bgpink { 
+    background-color: pink;
 }
