@@ -9,9 +9,8 @@ import Home from './pages/home';
 import './sass/style.scss';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Home />
-  </React.StrictMode>,
+  <Home />,
+  document.getElementById('root')
 );
 
 
