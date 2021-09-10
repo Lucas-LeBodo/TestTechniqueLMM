@@ -29,8 +29,7 @@ const Home = () => {
             })
 
     }, [count]);
-
-                
+           
     if(count === 1 ){
         addBtn = <Btn name="+" onClick={() =>  setCount(count => count + 1)}/>;
     }
@@ -43,9 +42,16 @@ const Home = () => {
     }
     return (
         <Fragment>
-            {removeBtn}
-            <img src={imgUrl} alt="coussin"/>
-            {addBtn}
+            <div className="container">
+                <div className={"carrousel"}>
+                    <img src={imgUrl} alt="coussin.png"/>
+                </div>
+                <div className="control">
+                    {removeBtn}
+                    <h2>{count}</h2>
+                    {addBtn}
+                </div>
+            </div>
         </Fragment>
     )
 };
