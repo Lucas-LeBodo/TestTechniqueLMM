@@ -1,11 +1,19 @@
+// import Libs
 import React, { Fragment, useEffect, useState } from 'react';
+
+// import Component
+import Btn from "../components/button";
 
 const Home = () => {
 
-    const  [imgUrl, setImgUrl] = useState();
+    let addBtn = '';
+    let removeBtn = '';
+
+    const [imgUrl, setImgUrl] = useState();
+    const [count, setCount] = useState(1);
+
     useEffect( ()  => {
-        let id = 1;
-        fetch(`http://localhost:8000/${id}`)
+        fetch(`http://localhost:8000/${count}`)
             .then(response => {
                 if(response.ok){
                     return response.blob();
@@ -20,11 +28,24 @@ const Home = () => {
                 console.error("Error :", err);
             })
 
-    }, []);
+    }, [count]);
 
+                
+    if(count === 1 ){
+        addBtn = <Btn name="+" onClick={() =>  setCount(count => count + 1)}/>;
+    }
+    if(count > 1 && count < 10){
+        addBtn = <Btn name="+" onClick={() =>  setCount(count => count + 1)}/>;
+        removeBtn = <Btn name="-" onClick={() => setCount(count => count - 1)}/>;
+    }
+    if(count === 10){
+        removeBtn = <Btn name="-" onClick={() => setCount(count => count - 1)}/>;
+    }
     return (
         <Fragment>
-            <image src={imgUrl} alt="image de coussin"/>
+            {removeBtn}
+            <img src={imgUrl} alt="coussin"/>
+            {addBtn}
         </Fragment>
     )
 };
