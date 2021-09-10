@@ -2,11 +2,16 @@
     display:flex;
     flex-direction: column;
     align-items:center;
-    justify-content: center;
+    justify-content: space-around;
     width: 100vw;
     height: 100vh;
 
     background-color: pink;
+
+    h1 {
+        color: orange;
+        font-size: 50px;
+    }
     .carrousel {
         display: flex;
         padding: 0 0 5em 0;
@@ -18,6 +23,7 @@
         justify-content:center;
         width: 100%;
         h2 {
+            color: orange;
             padding: 0 .8em 0 0.8em;
             font-size: 50px;
         }
